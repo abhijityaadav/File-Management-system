@@ -1,51 +1,198 @@
-.App {
-  text-align: center;
-  font-family: Arial, sans-serif;
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f4f8; /* Soft pastel blue-gray background */
+  color: #333;
+  line-height: 1.6;
 }
 
+.App {
+  text-align: center;
+  min-height: 100vh;
+}
+
+/* Navigation Bar */
 .navbar {
-  background-color: #f4f4f4;
+  background-color: #6c63ff; /* Soft lavender purple */
   padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-logo {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .nav-menu {
   display: flex;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-item {
-  margin: 0 10px;
+  margin: 0 15px;
 }
 
 .nav-link {
   text-decoration: none;
-  color: #333;
+  color: white;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.home-container, 
-.upload-container, 
-.download-container, 
+.nav-link:hover {
+  background-color: #5750d8; /* Darker lavender for hover */
+  color: #ffdd57; /* Warm yellow contrast */
+}
+
+/* Home Page */
+.home-container {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #ffffff; /* Card remains white for contrast */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.home-container h1 {
+  font-size: 2.5rem;
+  color: #6c63ff;
+  margin-bottom: 1rem;
+}
+
+.home-container p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* Containers for Functional Components */
+.upload-container,
+.download-container,
 .delete-container {
   max-width: 600px;
-  margin: 2rem auto;
-  padding: 1rem;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #ffffff; /* Card remains white for contrast */
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
+h2 {
+  color: #6c63ff;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+/* Form and Dropdown */
+form,
+select {
+  display: block;
+  margin: 1rem auto;
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 90%;
+  max-width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #6c63ff;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #5750d8;
+  transform: scale(1.05);
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Messages */
+.message {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #28a745; /* Green for success */
+}
+
+.message.error {
+  color: #dc3545; /* Red for errors */
+}
+
+/* Table Styles */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 1rem;
+  margin-top: 2rem;
+  background-color: #fff;
 }
 
 table, th, td {
   border: 1px solid #ddd;
-  padding: 8px;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #6c63ff;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+  }
+
+  .nav-item {
+    margin: 10px 0;
+  }
+
+  .home-container, 
+  .upload-container, 
+  .download-container, 
+  .delete-container {
+    padding: 1rem;
+    margin: 1.5rem;
+  }
 }
